@@ -60,6 +60,7 @@ namespace MediaLibrary
                 Console.WriteLine("Please enter a title to search for");
                 string search = Console.ReadLine();
                 var titlesearch = movieFile.Movies.Where(m => m.title.Contains(search, StringComparison.OrdinalIgnoreCase));
+                Console.WriteLine($"There are {titlesearch.Count()} movies with the search query in the title");
                 foreach(Movie m in titlesearch)
                 {
                     Console.WriteLine($"{Convert.ToString(m.mediaId)}, {m.title}, {string.Join(", ", m.genres)}, {m.director}, {m.runningTime}");
